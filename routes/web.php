@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CollectionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('average', [CollectionController::class, 'average'])->name('average');
+Route::get('max', [CollectionController::class, 'max'])->name('max');
+
+Route::get('median', [CollectionController::class, 'median'])->name('median');
+Route::get('min', [CollectionController::class, 'min'])->name('min');
+Route::get('collapse', [CollectionController::class, 'collapse'])->name('collapse');
